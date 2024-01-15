@@ -487,19 +487,88 @@ router.get('/purchase-info', function (req, res) {
 
 // =================================================
 
+router.post('/purchase-edit', function (req, res) {
+  const id = Number(req.query.id)
+  let { firstname, lastname, phone, email } =
+    req.body
+
+  const purchase = Purchase.getById(id)
+
+  console.log(purchase)
+
+  if (purchase) {
+    const newPurchase = Purchase.updateById(id, {
+      firstname,
+      lastname,
+      phone,
+      email,
+
+    })
+
+    console.log(newPurchase)
+
+    // Якщо оновлення вдалося, відображаємо повідомлення про успіх
+    if (newPurchase) {
+      res.render('purchase-alert', {
+        style: 'purchase-alert',
+        component: ['button', 'heading'],
+
+        data: {
+          link: '/purchase-list',
+          alert: 'Успішне виконання дії',
+          info: 'Товар успішно оновлено',
+        },
+      })
+    } else {
+      // Якщо оновлення не вдалося (наприклад, товару з таким id не існує),
+      // відображаємо повідомлення про помилку
+      res.render('purchase-alert', {
+        style: 'purchase-alert',
+        component: ['button', 'heading'],
+
+        data: {
+          link: '/purchase-list',
+          alert: 'Помилка',
+          info: 'Не вдалося оновити товар',
+        },
+      })
+    }
+  }
+})
 
 router.get('/purchase-edit', function (req, res) {
-  const id = Number(req.query.id);
-  const { firstname, lastname, email, phone } = req.body
-  const editedPurchase = Purchase.updateById(id, { firstname, lastname, email, phone })
-  console.log(editedPurchase);
+  const id = Number(req.query.id)
 
-  res.render('purchase-edit', {
+  const purchase = Purchase.getById(id)
 
-    style: 'purchase-edit',
+  if (!purchase) {
+    // Якщо товар з таким id не знайдено, відображаємо повідомлення про помилку
+    res.render('purchase-alert', {
+      style: 'purchase-alert',
+      component: ['button', 'heading'],
 
-  })
+      isError: true,
+      alert: 'Помилка',
+      info: 'Замовлення з таким ID не знайдено',
+    })
+  } else {
+    // Якщо товар знайдено, передаємо його дані у шаблон product-edit
+    res.render('purchase-edit', {
+      style: 'purchase-edit',
+      component: ['heading', 'divider', 'field', 'button'],
 
+      title: 'Зміна данних замовлення',
+
+      data: {
+        id: purchase.id,
+        firstname: purchase.firstname,
+        lastname: purchase.lastname,
+        phone: purchase.phone,
+        email: purchase.email,
+        delivery: purchase.delivery,
+      },
+    })
+  }
 })
 
 module.exports = router;
