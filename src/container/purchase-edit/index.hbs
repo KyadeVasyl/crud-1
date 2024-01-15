@@ -1,0 +1,17 @@
+<main class="main">
+    {{#with data}}
+        <form method="post" action="/purchase-list" class="form-card">
+            {{>heading title='Зміна даних'}}
+            
+            {{>field-text label='ID' value=id}}
+           
+            <div class="grid">
+                {{>field label='Імя' name="firstname"}}
+                {{>field label='Прізвище' name="lastname"}}
+                {{>field label='Електронна пошта' name="email"}}
+                {{>field label='Номер телефону' name="phone"}}
+            </div>
+            {{>button text="Зберегти зміни"}}
+        </form>
+    {{/with}}
+</main>
