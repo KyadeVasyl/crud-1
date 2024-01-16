@@ -1,0 +1,38 @@
+<main class="main">
+    {{#with data}}
+        <div class="form-card">
+            {{>heading title='Інформація про замовлення'}}
+            
+
+            {{>field-text label='ID' value=id}}
+            {{>divider}}
+
+            <div class="grid">
+                {{>field-text label='Імя' value=firstname}}
+                {{>field-text label='Прізвище' value=lastname}}
+                {{>field-text label='Електронна пошта' value=email}}
+                {{>field-text label='Номер телефону' value=phone}}
+            </div>
+
+            {{>divider}}
+
+            <div class="flex">
+                {{>field-text label='Назва товару' value=product}}
+                {{>field-text label='Коментар' value=comment}}
+            </div>
+
+            {{>divider}}
+
+            <div class="grid">
+                {{>field-text label='Вартість товару' value=productPrice}}
+                {{>field-text label='Сума до сплати' value=totalPrice}}
+                {{>field-text label='Вартість доставки' value=deliveryPrice}}
+                {{>field-text label='Нараховані бонуси' value=bonus}}
+            </div>
+
+            {{>divider}}
+
+           <a href="/purchase-edit?id={{id}}">{{>button text="Змінити дані"}}</a> 
+        </div>
+    {{/with}}
+</main>

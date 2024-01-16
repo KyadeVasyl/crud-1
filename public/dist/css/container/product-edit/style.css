@@ -1,0 +1,82 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 32px;
+}
+.product__title {
+  font-size: 32px;
+  font-weight: bold;
+  color: blue;
+}
+.product__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #F8F9FA;
+  border-radius: 4px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  padding: 18px;
+}
+.product__info {
+  font-size: 24px;
+  font-weight: 600;
+}
+.product__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.product__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.product__label {
+  font-size: 14px;
+}
+.product__input {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.product__button {
+  background-color: blue;
+  padding: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  width: 400px;
+}
+.product__add_info {
+  font-size: 12px;
+  color: gray;
+}
+.product__field_group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.input--big {
+  height: 70px;
+}
+
+.red {
+  background-color: red;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

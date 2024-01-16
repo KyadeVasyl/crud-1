@@ -1,0 +1,19 @@
+@use '../../lib/service.scss' as s;
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: s.space(2);
+    
+}
+
+.field__label {
+    font-size: 12px;
+    color: gray;
+}
+
+.field__text {
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+}
