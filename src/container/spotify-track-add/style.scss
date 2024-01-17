@@ -1,0 +1,23 @@
+@use '../../lib/service.scss' as s;
+@use '../../lib/spotify.scss' as spotify;
+
+
+.add-button {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    align-items: center;
+    gap: s.space(6);
+    color: #fff;
+    font-size: 18px;
+}
+
+
+.card {
+    background-color: #282828;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+
+.main {
+    height: auto;
+}
