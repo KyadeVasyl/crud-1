@@ -1,0 +1,83 @@
+@use '../../lib/service.scss' as s;
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.6s;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.main {
+    background-color: #121212;
+   min-height: 1000px;
+    color: #FFFEFE;
+    
+    display: flex;
+    justify-content: center;
+    padding: s.space(10) s.space(10);
+}
+
+
+
+.main__content {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: s.space(15);
+}
+
+
+.title {
+    font-size: 24px;
+}
+
+.title--center {
+    text-align: center;
+
+}
+
+
+
+.track {
+   
+    display: flex;
+    flex-direction: column;
+    gap: s.space(4);
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: s.space(10);
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: s.space(3);
+    }
+
+    &__name {
+        font-size: 24px;
+        color: #fff;
+    }
+}
+
+
+.header__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  
+}
+
+.header__icons {
+    display: flex;
+    gap: s.space(8);
+}
