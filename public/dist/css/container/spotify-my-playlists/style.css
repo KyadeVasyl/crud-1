@@ -9,11 +9,11 @@ a:hover {
 
 .main {
   background-color: #121212;
-  height: 100%;
+  min-height: 1000px;
   color: #FFFEFE;
   display: flex;
   justify-content: center;
-  padding: 24px 8px;
+  padding: 40px 40px;
 }
 
 .main__content {
@@ -33,50 +33,36 @@ a:hover {
 }
 
 .track {
-  display: grid;
-  grid-template-columns: 92px 1fr 42px;
-  gap: 28px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .track__list {
   display: grid;
-  gap: 28px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 40px;
 }
 .track__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
 }
 .track__name {
   font-size: 24px;
   color: #fff;
 }
 
-button {
-  transition: opacity 0.6s;
-}
-button:hover {
-  opacity: 0.6;
-}
-
-.choose {
-  display: grid;
-  gap: 24px;
-}
-
-.choose__item {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 24px;
-}
-
-.choose__content {
+.header__block {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.header__icons {
+  display: flex;
+  gap: 32px;
 }
 
 /*# sourceMappingURL=style.css.map */

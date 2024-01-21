@@ -60,23 +60,45 @@ button:hover {
   opacity: 0.6;
 }
 
-.choose {
+.search {
+  background-color: #292929;
+  padding: 8px 16px;
+  border-radius: 8px;
   display: grid;
-  gap: 24px;
+  grid-template-columns: 56px 1fr auto;
+  gap: 32px;
+  color: #ddd;
+  font-size: 24px;
+}
+.search__button {
+  color: #ddd;
 }
 
-.choose__item {
+.playlist__list {
   display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 24px;
+  gap: 28px;
 }
 
-.choose__content {
+.playlist {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 28px;
+}
+.playlist__name {
+  font-size: 24px;
+  color: #fff;
+}
+.playlist__amount {
+  color: #BDBDBD;
+  font-size: 16px;
+}
+
+.playlist__content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
 }
 
 /*# sourceMappingURL=style.css.map */
